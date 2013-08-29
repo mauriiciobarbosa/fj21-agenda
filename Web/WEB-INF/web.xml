@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="2.5"
+ xmlns="http://java.sun.com/xml/ns/javaee"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+
+ 	<display-name>fj21-agenda</display-name>
+
+ 	<servlet>
+ 		 <servlet-name>OiMundo</servlet-name>
+  		<servlet-class>com.caelum.agenda.servlet.OiMundo</servlet-class>
+ 	</servlet>
+ 
+ 	<servlet>
+  		<servlet-name>AdicionaContato</servlet-name>
+  		<servlet-class>com.caelum.agenda.servlet.AdicionaContato</servlet-class>
+ 	</servlet>
+ 	
+ 	<servlet>
+  		<servlet-name>Contador</servlet-name>
+  		<servlet-class>com.caelum.agenda.servlet.Contador</servlet-class>
+ 	</servlet>
+ 	
+ 	<servlet>
+  		<servlet-name>Controller</servlet-name>
+  		<servlet-class>com.caelum.agenda.servlet.Controller</servlet-class>
+ 	</servlet>
+ 	
+ 	<servlet-mapping>
+  		<servlet-name>OiMundo</servlet-name>
+  		<url-pattern>/oi</url-pattern>
+ 	</servlet-mapping>
+ 	
+ 	<servlet-mapping>
+  		<servlet-name>AdicionaContato</servlet-name>
+		<url-pattern>/adicionaContato</url-pattern>
+ 	</servlet-mapping>
+ 	
+ 	<servlet-mapping>
+  		<servlet-name>Contador</servlet-name>
+		<url-pattern>/contador</url-pattern>
+ 	</servlet-mapping>
+ 
+ 	<servlet-mapping>
+  		<servlet-name>Controller</servlet-name>
+		<url-pattern>/mvc</url-pattern>
+ 	</servlet-mapping>
+ 
+ 	<welcome-file-list>
+ 		<welcome-file>bemvindo.jsp</welcome-file>
+  		<welcome-file>index.html</welcome-file>
+ 	</welcome-file-list>
+ 
+ 	<error-page>
+  		<exception-type>java.lang.Exception</exception-type>
+  		<location>/erro.html</location>
+ 	</error-page>
+ 	
+ 	<error-page>
+ 		<error-code>404</error-code>
+ 		<location>/erro404.html</location>
+ 	</error-page>
+
+	<filter>
+		<filter-name>cornometro</filter-name>
+		<filter-class>com.caelum.agenda.filter.RunTime</filter-class>
+	</filter>
+	
+	<filter-mapping>
+		<filter-name>cornometro</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	<filter>
+		<filter-name>filtroConexao</filter-name>
+		<filter-class>com.caelum.agenda.filter.ConnectionFilter</filter-class>
+	</filter>
+	
+	<filter-mapping>
+		<filter-name>filtroConexao</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+</web-app>

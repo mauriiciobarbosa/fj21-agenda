@@ -1,0 +1,19 @@
+# @author: Mauricio Barbosa
+# @email: mauriiciobarbosa@gmail.com
+# @date: 2013-08-29
+
+# Generic Files
+*~
+*.tmp
+*.swp
+
+# Eclipse Files
+.settings/
+.classpath
+.project
+
+# J2EE Files
+build/
+
+# Java Files
+*.class
